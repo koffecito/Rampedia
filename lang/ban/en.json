@@ -1,0 +1,94 @@
+{
+  "ban": {
+    "label": "Account Ban",
+    "title": "Ban in Magic Rampage: Signs, Reasons and How to Unban an Account",
+    "description": "The main signs of a Magic Rampage account ban, possible reasons for a ban, and how to contact support.",
+    "sections": [
+      {
+        "paragraphs": [
+          "Sometimes a player may notice that some online features in Magic Rampage have stopped working. This may be related to an account ban.",
+          "Below, we will look at the main signs of a ban, the reasons why an account can be banned, and what to do if your account was blocked by mistake."
+        ]
+      },
+      {
+        "title": "Main Signs of a Ban"
+      },
+      {
+        "subtitle": "Tavern",
+        "paragraphs": [
+          "One of the signs of a ban is being unable to enter the Tavern. When you try to enter, you are disconnected from the server, and a message appears at the top of the screen:"
+        ],
+        "quote": "“Unusual activity has been detected on your account. Some online multiplayer features may not work as expected.”",
+        "image": "images/ban/tavern-en.jpg",
+        "image_alt": "Tavern ban message"
+      },
+      {
+        "subtitle": "Weekly Level",
+        "paragraphs": [
+          "When an account is banned, the following restrictions may appear:"
+        ],
+        "list": [
+          "The Weekly Level reward is always +1 token",
+          "You cannot increase the Weekly Level difficulty above “Easy”"
+        ],
+        "image": "images/ban/weekly-en.jpg",
+        "image_alt": "Weekly Level ban"
+      },
+      {
+        "subtitle": "Competitive Mode",
+        "paragraphs": [
+          "The following signs may also be noticeable in Competitive Mode:"
+        ],
+        "list": [
+          "After completing a match, a message appears at the bottom of the statistics:<br><br>“Suspicious activity has been detected on your account. Some Competitive Mode features will not work.”",
+          "You cannot play friendly matches with friends",
+          "You disappear from the player rankings in the Hall of Champions"
+        ],
+        "image": "images/ban/competitive-en.jpg",
+        "image_alt": "Competitive Mode ban"
+      },
+      {
+        "subtitle": "Hall of Champions",
+        "image": "images/ban/hoc-en.jpg",
+        "image_alt": "Hall of Champions ban"
+      },
+      {
+        "title": "What Can You Get Banned For?",
+        "paragraphs": [
+          "An account may be banned for interfering with the game or using third-party programs. In particular:"
+        ],
+        "list": [
+          "Modifying game files",
+          "Changing numerical values using third-party programs — for example, modifying the amount of in-game currency or damage, or reducing prices",
+          "Cloning items in some cases"
+        ]
+      },
+      {
+        "paragraphs": [
+          "If a player actually performed such actions, the account will not be unbanned for these violations. In this case, there is no point in contacting support to ask them to remove the ban."
+        ]
+      },
+      {
+        "title": "How to Unban an Account?",
+        "paragraphs": [
+          "If you have not performed any actions that can result in a ban but have noticed the signs listed above, contact the game's support team.",
+          "In your request, explain that your account was banned by mistake and be sure to provide:"
+        ],
+        "list": [
+          "Your in-game nickname",
+          "Your Magic ID"
+        ]
+      },
+      {
+        "paragraphs": [
+          "It is recommended to contact support in English.",
+          "More information about how and where to properly contact game support can be found in the separate article: <a class=\"article-link\" href=\"article-support.html\">Go to article</a>"
+        ]
+      },
+      {
+        "title": "Important",
+        "highlight": "If you actually used third-party programs, modified game files or changed numerical values in the game, you should not contact support hoping to have the ban removed — accounts are not unbanned for these violations."
+      }
+    ]
+  }
+}
