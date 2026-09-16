@@ -1,0 +1,97 @@
+{
+  "history": {
+    "label": "The History of Magic Rampage",
+    "title": "The History of Magic Rampage",
+    "description": "The history of the creation and development of Magic Rampage.",
+    "cover_alt": "The History of Magic Rampage",
+
+    "sections": [
+      {
+        "paragraphs": [
+          "Magic Rampage is a dynamic 2D platformer with RPG elements from the Brazilian independent studio Asantee Games. Pixel art, magic, weapons, dungeons, and numerous secrets have made the game recognizable among fans of classic platformers.",
+          "But the story of Magic Rampage began long before its release."
+        ]
+      },
+
+      {
+        "title": "The Beginning of Asantee Games",
+        "paragraphs": [
+          "The story of the game begins with André Santee — a developer from Brazil.",
+          "Before creating Asantee Games, André worked on his own game engine called Ethanon Engine. Initially, it was a small project that he worked on in his free time. Over time, however, the engine became a serious tool for game development.",
+          "Later, André began working together with Bruno Pereira. In 2012, they founded the independent studio Asantee Games in Campo Grande, Brazil."
+        ],
+        "fact": "The name Asantee Games is connected to the name of its founder — André Santee."
+      },
+
+      {
+        "title": "The Steps Before Magic Rampage",
+        "paragraphs": [
+          "Magic Rampage was not the studio's first game.",
+          "Before it, Asantee Games worked on other projects — Penumbra, Castelo das Sombras, and Magic Portals. Working on these previous games gave the developers valuable experience: they learned how to create controls for mobile devices, design levels, and work with their own technology.",
+          "This experience later proved useful when creating Magic Rampage."
+        ],
+        "fact": "Magic Rampage is connected to other Asantee Games titles and takes place in the same game universe. Elements and characters from other studio projects can be found in it."
+      },
+
+      {
+        "title": "The Idea Behind the Game",
+        "paragraphs": [
+          "The developers wanted to create a game that would resemble classic platformers from the 16-bit era.",
+          "In older games, players were usually given a simple but engaging task: move through the level, jump over obstacles, fight enemies, and search for secrets.",
+          "Asantee Games decided to take this foundation and add RPG elements to it.",
+          "This resulted in:"
+        ],
+        "list": [
+          "Different types of weapons",
+          "Equipment",
+          "Character classes",
+          "Magical abilities",
+          "Character progression",
+          "Dungeons",
+          "Secret areas and items"
+        ],
+        "after_list": "The result was a unique combination of a classic platformer and an RPG."
+      },
+
+      {
+        "title": "Why Does the Game Look Like This?",
+        "paragraphs": [
+          "One of the main features of Magic Rampage is its pixel art.",
+          "The developers did not try to make the game as realistic as possible. Instead, they deliberately used a style reminiscent of old console games.",
+          "At the same time, Magic Rampage is not simply a copy of games from the past. It features modern gameplay mechanics, a large amount of equipment, and an RPG character progression system.",
+          "This combination of a retro visual style and modern mechanics became one of the project's main features."
+        ]
+      },
+
+      {
+        "title": "The Release of Magic Rampage",
+        "paragraphs": [
+          "After development, the game was finally released.",
+          "Magic Rampage was released on December 25, 2013.",
+          "Initially, mobile devices were the main focus. The developers deliberately paid particular attention to Android. In an interview, André explained that releasing on Android first and then on iOS turned out to be a beneficial decision for the company.",
+          "The game later received versions for other platforms. In particular, it appeared on Ouya in 2014, on iOS in 2015, and the PC version reached Steam through Early Access in 2020. The full Steam release took place in 2022."
+        ],
+        "fact": "Magic Rampage received the Editors' Choice award on Google Play."
+      },
+
+      {
+        "title": "Continued Development",
+        "paragraphs": [
+          "After the release, the developers did not abandon the project.",
+          "Magic Rampage gradually received new levels, items, features, and game modes. The game became much larger than the version that existed at the time of its initial release.",
+          "Over time, additional competitive elements and other features were introduced, helping the project maintain an active audience."
+        ],
+        "fact": "Magic Rampage is a good example of a game that continued to develop after its initial success. The developers kept expanding it instead of simply releasing another game."
+      },
+
+      {
+        "title": "From a Small Team to a Large Audience",
+        "paragraphs": [
+          "The most interesting part of the history of Magic Rampage is not even the game itself, but how it was created.",
+          "Asantee Games started as a small independent studio. The developers did not have the resources of huge companies such as Nintendo, Sony, or Electronic Arts. Instead, they had their own technology, experience, and an idea to create a game inspired by classic platformers.",
+          "Magic Rampage gradually grew from this small project into the studio's most well-known game."
+        ]
+      }
+    ]
+  }
+      }
