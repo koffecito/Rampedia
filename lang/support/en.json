@@ -1,0 +1,70 @@
+{
+  "support": {
+    "label": "Game Support",
+    "title": "How and Where to Properly Contact Game Support",
+    "description": "How to properly contact Magic Rampage support and what information to include.",
+    "cover_alt": "Magic Rampage Support",
+
+    "sections": [
+      {
+        "paragraphs": [
+          "If you encounter a problem in the game that you cannot solve yourself, you can contact support. To help them resolve your issue faster, it is important to write your request clearly and provide the necessary information."
+        ]
+      },
+      {
+        "title": "What Can You Contact Support About?",
+        "paragraphs": [
+          "You can contact support, for example, if:"
+        ],
+        "list": [
+          "You encounter a technical error or bug",
+          "Your account has been blocked",
+          "Game items, rewards, or other progress have disappeared",
+          "You have problems with purchases or in-game payments",
+          "A reward was not credited",
+          "You have problems with your account",
+          "You encounter another situation that you cannot solve yourself"
+        ]
+      },
+      {
+        "title": "How to Write a Support Request",
+        "paragraphs": [
+          "It is recommended to contact support in English or Portuguese. Your message should be brief and clear: describe the problem first, then add the important details.",
+          "Be sure to include:"
+        ],
+        "list": [
+          "A detailed description of the problem",
+          "Your in-game nickname",
+          "Your Magic ID",
+          "If necessary — when and under what circumstances the problem occurred"
+        ],
+        "highlight": "For example, instead of simply writing: “An item disappeared.” It is better to explain which item disappeared, when it happened, and what you were doing before it happened."
+      },
+      {
+        "paragraphs": [
+          "The more accurately you describe the situation, the easier it will be for a support representative to understand the problem and help you."
+        ]
+      },
+      {
+        "title": "The Main Points",
+        "highlight": "<strong>It is recommended to write your request in English or Portuguese, provide your nickname and Magic ID, and calmly describe the problem in detail.</strong> You do not need to write a long message — the important thing is that your request clearly explains what happened and what kind of help you need."
+      },
+      {
+        "title": "Where to Send Your Request?",
+        "paragraphs": [
+          "You can contact game support in two ways:"
+        ],
+        "list": [
+          "by email at <a class=\"support-link\" href=\"mailto:support@asanteegames.com\">support@asanteegames.com</a>",
+          "through <a class=\"support-link\" href=\"https://support.magicrampage.com\" target=\"_blank\" rel=\"noopener noreferrer\">support.magicrampage.com</a>"
+        ],
+        "highlight": "If you contact support through the website, be sure to provide your email address so that the support team can send you a response."
+      },
+      {
+        "paragraphs": [
+          "A response from support usually arrives within 4 business days, so there is no need to send several identical requests in a row — it is better to wait for a response."
+        ]
+      }
+    ]
+  }
+      }
