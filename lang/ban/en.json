@@ -35,23 +35,22 @@
         "image_alt": "Weekly Level ban"
       },
       {
-        "subtitle": "Competitive Mode",
-        "paragraphs": [
-          "The following signs may also be noticeable in Competitive Mode:"
-        ],
-        "list": [
-          "After completing a match, a message appears at the bottom of the statistics:<br><br>“Suspicious activity has been detected on your account. Some Competitive Mode features will not work.”",
-          "You cannot play friendly matches with friends",
-          "You disappear from the player rankings in the Hall of Champions"
-        ],
-        "image": "images/ban/competitive-en.jpg",
-        "image_alt": "Competitive Mode ban"
-      },
-      {
-        "subtitle": "Hall of Champions",
-        "image": "images/ban/hoc-en.jpg",
-        "image_alt": "Hall of Champions ban"
-      },
+  "subtitle": "Competitive Mode",
+  "paragraphs": [
+    "The following signs may also be noticeable in Competitive Mode:"
+  ],
+  "quote": "“Suspicious activity has been detected on your account. Some Competitive Mode features will not work.”",
+  "image": "images/ban/competitive-en.jpg",
+  "image_alt": "Competitive Mode ban"
+},
+{
+  "list": [
+    "You cannot play friendly matches with friends",
+    "You disappear from the player rankings in the Hall of Champions"
+  ],
+  "image": "images/ban/hoc-en.jpg",
+  "image_alt": "Hall of Champions ban"
+},
       {
         "title": "What Can You Get Banned For?",
         "paragraphs": [
