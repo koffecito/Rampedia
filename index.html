@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Magic Rampage — Информационный портал</title>
+  <meta name="description" content="Информационный портал о Magic Rampage.">
+  <meta name="theme-color" content="#0d0f14">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    :root {
+      --bg: #0d0f14;
+      --card: #151822;
+
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(216,162,74,0.35);
+
+      --text: #f0f1f4;
+      --text-dim: #9da2af;
+
+      --accent: #d8a24a;
+
+      --font-body: 'Inter', sans-serif;
+      --font-display: 'Cinzel', serif;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          900px 600px at 50% -150px,
+          #202431 0%,
+          var(--bg) 65%
+        );
+
+      color: var(--text);
+
+      font-family: var(--font-body);
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    .page {
+      width: 100%;
+      max-width: 780px;
+
+      margin: 0 auto;
+
+      padding: 65px 18px 60px;
+    }
+
+
+
+    .hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+    .hero-kicker {
+      margin: 0 0 12px;
+
+      color: var(--accent);
+
+      font-family: var(--font-display);
+
+      font-size: 11px;
+      font-weight: 600;
+
+      letter-spacing: 0.2em;
+
+      text-transform: uppercase;
+    }
+
+
+    .hero-title {
+      margin: 0;
+
+      font-family: var(--font-display);
+
+      font-size: clamp(32px, 8vw, 48px);
+
+      line-height: 1.15;
+
+      letter-spacing: 0.02em;
+    }
+
+
+    .hero-line {
+      width: 45px;
+      height: 1px;
+
+      margin: 19px auto;
+
+      background: var(--accent);
+
+      opacity: 0.7;
+    }
+
+
+    .hero-description {
+      max-width: 600px;
+
+      margin: 0 auto;
+
+      color: var(--text-dim);
+
+      font-size: 14px;
+
+      line-height: 1.75;
+    }
+
+
+    
+    .article-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 20px;
+    }
+
+
+    .article-card {
+      position: relative;
+
+      display: block;
+
+      color: var(--text);
+
+      text-decoration: none;
+
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .article-card:hover {
+      transform: translateY(-3px);
+
+      border-color: var(--border-hover);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,0.22);
+    }
+
+
+    .article-card:active {
+      transform: translateY(-1px);
+    }
+
+
+    
+    .article-image {
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 2.6 / 1;
+
+      overflow: hidden;
+
+      background: #101219;
+    }
+
+
+    .article-image img {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.45s ease,
+        filter 0.3s ease;
+    }
+
+
+    .article-card:hover .article-image img {
+      transform: scale(1.035);
+
+      filter: brightness(1.06);
+    }
+
+
+
+    .article-image::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      height: 45%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(0,0,0,0.3)
+        );
+
+      pointer-events: none;
+    }
+
+
+    
+    .article-content {
+      position: relative;
+
+      padding: 22px 25px 25px;
+    }
+
+
+    .article-number {
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: var(--accent);
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+    }
+
+
+    .article-title {
+      margin: 0;
+
+      padding-right: 35px;
+
+      font-family: var(--font-display);
+
+      font-size: 20px;
+
+      line-height: 1.35;
+
+      font-weight: 600;
+    }
+
+
+    .article-description {
+      margin: 11px 35px 0 0;
+
+      color: var(--text-dim);
+
+      font-size: 13.5px;
+
+      line-height: 1.7;
+    }
+
+
+    
+    .article-arrow {
+      position: absolute;
+
+      right: 25px;
+      top: 26px;
+
+      width: 9px;
+      height: 9px;
+
+      border-top: 1px solid var(--accent);
+      border-right: 1px solid var(--accent);
+
+      transform: rotate(45deg);
+
+      opacity: 0.65;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+
+    .article-card:hover .article-arrow {
+      transform:
+        translateX(4px)
+        rotate(45deg);
+
+      opacity: 1;
+    }
+
+
+    
+    .links-card {
+      margin-top: 5px;
+    }
+
+
+    
+    .footer {
+  margin-top: 38px;
+
+  text-align: center;
+
+  color: #626773;
+
+  font-size: 11px;
+}
+
+.footer-author {
+  color: var(--accent);
+
+  font-weight: 600;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-author:hover {
+  opacity: 0.8;
+}
+
+
+    @media (max-width: 520px) {
+
+      .page {
+        padding:
+          45px
+          13px
+          45px;
+      }
+
+
+      .hero {
+        margin-bottom: 30px;
+      }
+
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+
+      .article-list {
+        gap: 15px;
+      }
+
+
+      .article-card {
+        border-radius: 17px;
+      }
+
+
+      .article-image {
+        aspect-ratio: 2.15 / 1;
+      }
+
+
+      .article-content {
+        padding:
+          18px
+          18px
+          20px;
+      }
+
+
+      .article-title {
+        font-size: 17px;
+
+        padding-right: 30px;
+      }
+
+
+      .article-description {
+        margin-top: 9px;
+
+        margin-right: 28px;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+      }
+
+
+      .article-arrow {
+        right: 19px;
+        top: 22px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <header class="hero">
+
+      <p class="hero-kicker">
+        Информационный портал
+      </p>
+
+      <h1 class="hero-title">
+        Magic Rampage
+      </h1>
+
+      <div class="hero-line"></div>
+
+    </header>
+
+
+    <section class="article-list">
+
+
+
+      <a
+        class="article-card"
+        href="article-history.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/history.jpg"
+            alt="История создания Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            01
+          </span>
+
+          <h2 class="article-title">
+            История создания Magic Rampage
+          </h2>
+
+          <p class="article-description">
+            Magic Rampage — динамичный 2D-платформер с элементами RPG
+            от бразильской независимой студии Asantee Games. Пиксельная
+            графика, магия, оружие, подземелья и множество секретов
+            сделали игру узнаваемой среди поклонников классических
+            платформеров.
+
+            <br><br>
+
+            Но путь Magic Rampage начался задолго до её выхода...
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="article-card"
+        href="article-support.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/support.jpg"
+            alt="Поддержка Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            02
+          </span>
+
+          <h2 class="article-title">
+            Как и куда правильно писать в поддержку игры
+          </h2>
+
+          <p class="article-description">
+            Если у вас возникла проблема в игре, которую невозможно
+            решить самостоятельно, можно обратиться в службу поддержки.
+            Чтобы вам смогли быстрее помочь, важно правильно составить
+            обращение и указать необходимую информацию.
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="article-card"
+        href="article-ban.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/ban.jpg"
+            alt="Бан в Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            03
+          </span>
+
+          <h2 class="article-title">
+            Бан в Magic Rampage
+          </h2>
+
+          <p class="article-description">
+            Иногда игрок может обнаружить, что некоторые сетевые функции
+            в Magic Rampage перестали работать. Это может быть связано
+            с блокировкой аккаунта.
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="article-card"
+        href="article-achievements.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/achievements.jpg"
+            alt="Достижения Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            04
+          </span>
+
+          <h2 class="article-title">
+            Достижения Magic Rampage
+          </h2>
+
+          <p class="article-description">
+            Здесь собраны все достижения игры и их описание. Список
+            разделён по игровым режимам: Rampage+, Обычный Режим,
+            а также достижения, которые пока недоступны и появятся
+            в будущих обновлениях.
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="article-card"
+        href="article-apps.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/apps.jpg"
+            alt="Приложения для Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            05
+          </span>
+
+          <h2 class="article-title">
+            Приложения для Magic Rampage
+          </h2>
+
+          <p class="article-description">
+            Для Magic Rampage существуют сторонние приложения,
+            которые помогают игрокам экспериментировать с экипировкой
+            и лучше разбираться в игре.
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+
+      <a
+        class="article-card links-card"
+        href="links.html"
+      >
+
+        <div class="article-image">
+
+          <img
+            src="images/links.jpg"
+            alt="Ссылки Magic Rampage"
+          >
+
+        </div>
+
+
+        <div class="article-content">
+
+          <span class="article-number">
+            06
+          </span>
+
+          <h2 class="article-title">
+            Ссылки
+          </h2>
+
+          <p class="article-description">
+            В этом разделе собраны основные ссылки, которые могут
+            пригодиться игрокам Magic Rampage: официальные страницы
+            игры и разработчика, а также ссылки на сообщества игры.
+          </p>
+
+          <span class="article-arrow"></span>
+
+        </div>
+
+      </a>
+
+
+    </section>
+
+
+   <footer class="footer">
+  Made by
+  <span class="footer-author">Kofeman</span>
+  (@Koffecito)
+</footer>
+
+
+  </main>
+
+</body>
+</html>
