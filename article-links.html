@@ -572,7 +572,13 @@ function renderSection(section){
   if(section.disclaimer){
     const disclaimer=document.createElement("p");
     disclaimer.className="disclaimer";
-    disclaimer.textContent=section.disclaimer;
+
+    const mark=document.createElement("span");
+    mark.className="disclaimer-mark";
+    mark.textContent="*";
+
+    disclaimer.appendChild(mark);
+    disclaimer.appendChild(document.createTextNode(section.disclaimer));
     wrapper.appendChild(disclaimer);
   }
 
