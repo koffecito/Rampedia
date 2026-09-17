@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magic Rampage</title>
+<meta name="description" content="">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0d0f14;
+  --card:#151822;
+  --card-soft:#11141b;
+  --border:rgba(255,255,255,0.08);
+  --border-hover:rgba(216,162,74,0.32);
+  --text:#eef0f4;
+  --text-main:#d1d4dc;
+  --text-dim:#9da2af;
+  --accent:#d8a24a;
+  --font-body:'Inter',sans-serif;
+  --font-display:'Cinzel',serif;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:radial-gradient(900px 600px at 50% -150px,#202431 0%,var(--bg) 65%);
+  color:var(--text);
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  width:100%;
+  max-width:780px;
+  margin:0 auto;
+  padding:25px 18px 60px;
+}
+
+.topbar{
+  margin-bottom:22px;
+}
+
+.back-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--text-dim);
+  font-size:12px;
+  font-weight:500;
+  text-decoration:none;
+  transition:color .2s ease;
+}
+
+.back-link:hover{
+  color:var(--accent);
+}
+
+.back-icon{
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
+  transition:transform .2s ease;
+}
+
+.back-link:hover .back-icon{
+  transform:translateX(-2px);
+}
+
+.article{
+  overflow:hidden;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+
+.cover{
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#101219;
+}
+
+.cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.article-content{
+  padding:36px 40px 42px;
+}
+
+.article-label{
+  margin:0 0 10px;
+  color:var(--accent);
+  font-family:var(--font-display);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+h1{
+  margin:0;
+  color:var(--text);
+  font-family:var(--font-display);
+  font-size:clamp(29px,6vw,42px);
+  line-height:1.2;
+}
+
+h2{
+  margin:40px 0 16px;
+  color:var(--text);
+  font-family:var(--font-display);
+  font-size:22px;
+  line-height:1.35;
+}
+
+.link-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.link-card{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:70px;
+  padding:9px 48px 9px 9px;
+  background:var(--card-soft);
+  border:1px solid var(--border);
+  border-radius:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+
+.link-card:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-hover);
+  background:#171b24;
+}
+
+.link-image{
+  width:50px;
+  height:50px;
+  flex:0 0 50px;
+  margin-right:13px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#20242e;
+}
+
+.link-title{
+  min-width:0;
+  color:var(--text);
+  font-size:13.5px;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.link-arrow{
+  position:absolute;
+  top:50%;
+  right:18px;
+  width:8px;
+  height:8px;
+  border-top:1px solid var(--accent);
+  border-right:1px solid var(--accent);
+  transform:translateY(-50%) rotate(45deg);
+  opacity:.75;
+  transition:transform .2s ease;
+}
+
+.link-card:hover .link-arrow{
+  transform:translate(3px,-50%) rotate(45deg);
+}
+
+.link-card.expandable{
+  cursor:pointer;
+}
+
+.link-card.expandable[aria-expanded="true"] .link-arrow{
+  transform:translateY(-50%) rotate(135deg);
+}
+
+.sublinks{
+  display:grid;
+  grid-template-rows:0fr;
+  opacity:0;
+  transition:grid-template-rows .25s ease,opacity .2s ease;
+}
+
+.sublinks.open{
+  grid-template-rows:1fr;
+  opacity:1;
+}
+
+.sublinks-inner{
+  overflow:hidden;
+}
+
+.sublinks-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:8px 0 0 18px;
+}
+
+.sublink{
+  position:relative;
+  display:flex;
+  align-items:center;
+  min-height:58px;
+  padding:7px 44px 7px 7px;
+  border:1px solid var(--border);
+  border-radius:13px;
+  background:var(--card-soft);
+  color:var(--text);
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+
+.sublink:hover{
+  transform:translateY(-1px);
+  border-color:var(--border-hover);
+  background:#171b24;
+}
+
+.sublink-image{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  margin-right:11px;
+  border-radius:10px;
+  object-fit:cover;
+  background:#20242e;
+}
+
+.sublink-content{
+  min-width:0;
+}
+
+.sublink-title{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.sublink-badge{
+  position:absolute;
+  top:50%;
+  right:43px;
+  transform:translateY(-50%);
+  padding:4px 8px;
+  border:1px solid rgba(216,162,74,.28);
+  border-radius:5px;
+  background:rgba(216,162,74,.08);
+  color:var(--accent);
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  }
+
+.sublink-arrow{
+  position:absolute;
+  top:50%;
+  right:17px;
+  width:8px;
+  height:8px;
+  border-top:1px solid var(--accent);
+  border-right:1px solid var(--accent);
+  transform:translateY(-50%) rotate(45deg);
+  opacity:.75;
+}
+
+.sublink-separator{
+  height:1px;
+  margin:3px 0;
+  background:var(--border);
+}
+
+.disclaimer{
+  margin-top:22px;
+  padding:13px 16px;
+  border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;
+  background:rgba(255,255,255,.025);
+  color:var(--text-dim);
+  font-size:12px;
+  line-height:1.6;
+  text-align:left;
+}
+
+.disclaimer-mark{
+  color:var(--accent);
+  font-weight:700;
+  margin-right:6px;
+}
+
+.author{
+  margin-top:28px;
+  text-align:center;
+  color:#626773;
+  font-size:11px;
+}
+
+.author-name{
+  color:var(--accent);
+  font-weight:600;
+}
+
+@media(max-width:520px){
+  .page{
+    padding:20px 12px 45px;
+  }
+
+  .article{
+    border-radius:17px;
+  }
+
+  .article-content{
+    padding:28px 20px 34px;
+  }
+
+  h1{
+    font-size:28px;
+  }
+
+  h2{
+    margin-top:34px;
+    font-size:20px;
+  }
+
+  .link-card{
+    min-height:64px;
+    padding:8px 42px 8px 8px;
+  }
+
+  .link-image{
+    width:46px;
+    height:46px;
+    flex-basis:46px;
+    margin-right:11px;
+    border-radius:11px;
+  }
+
+  .link-title{
+    font-size:13px;
+  }
+
+  .link-arrow{
+    right:15px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<nav class="topbar">
+<a class="back-link" href="index.html">
+<svg class="back-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<span data-i18n="back"></span>
+</a>
+</nav>
+
+<article class="article">
+
+<div class="cover">
+<img src="images/links.jpg" alt="" id="coverImage">
+</div>
+
+<div class="article-content">
+
+<p class="article-label" data-i18n="links.label"></p>
+
+<h1 data-i18n="links.title"></h1>
+
+<div id="article-body"></div>
+
+</div>
+
+</article>
+
+<footer class="author">
+<span data-i18n="made_by"></span>
+<span class="author-name">Kofeman</span>
+(@Koffecito)
+</footer>
+
+</main>
+
+<script>
+const DEFAULT_LANGUAGE="en";
+
+function getLanguage(){
+  const language=(navigator.language||"").toLowerCase();
+  return language.startsWith("ru")?"ru":"en";
+}
+
+async function loadJson(path){
+  const response=await fetch(path);
+  if(!response.ok) throw new Error("File not found");
+  return await response.json();
+}
+
+function getValue(object,path){
+  return path.split(".").reduce((value,key)=>{
+    return value && value[key]!==undefined ? value[key] : null;
+  },object);
+}
+
+function applyCommon(data){
+  document.querySelectorAll("[data-i18n]").forEach(element=>{
+    const value=getValue(data,element.dataset.i18n);
+    if(value!==null) element.innerHTML=value;
+  });
+}
+
+function renderSublink(item){
+  if(item.separator){
+    const separator=document.createElement("div");
+    separator.className="sublink-separator";
+    return separator;
+  }
+
+  const link=document.createElement("a");
+  link.className="sublink";
+  link.href=item.href;
+  link.target="_blank";
+  link.rel="noopener noreferrer";
+
+  const image=document.createElement("img");
+  image.className="sublink-image";
+  image.src=item.image;
+  image.alt="";
+  image.loading="lazy";
+
+  const content=document.createElement("span");
+  content.className="sublink-content";
+
+  const title=document.createElement("span");
+  title.className="sublink-title";
+  title.textContent=item.title;
+  content.appendChild(title);
+
+  if(item.badge){
+    const badge=document.createElement("span");
+    badge.className="sublink-badge";
+    badge.textContent=item.badge;
+    content.appendChild(badge);
+  }
+
+  const arrow=document.createElement("span");
+  arrow.className="sublink-arrow";
+
+  link.appendChild(image);
+  link.appendChild(content);
+  link.appendChild(arrow);
+  return link;
+}
+
+function renderExpandable(item){
+  const fragment=document.createDocumentFragment();
+
+  const trigger=document.createElement("div");
+  trigger.className="link-card expandable";
+  trigger.tabIndex=0;
+  trigger.setAttribute("role","button");
+  trigger.setAttribute("aria-expanded","false");
+
+  const image=document.createElement("img");
+  image.className="link-image";
+  image.src=item.image;
+  image.alt="";
+  image.loading="lazy";
+
+  const title=document.createElement("span");
+  title.className="link-title";
+  title.textContent=item.title;
+
+  const arrow=document.createElement("span");
+  arrow.className="link-arrow";
+
+  trigger.appendChild(image);
+  trigger.appendChild(title);
+  trigger.appendChild(arrow);
+
+  const panel=document.createElement("div");
+  panel.className="sublinks";
+
+  const inner=document.createElement("div");
+  inner.className="sublinks-inner";
+
+  const list=document.createElement("div");
+  list.className="sublinks-list";
+  item.sublinks.forEach(sublink=>list.appendChild(renderSublink(sublink)));
+
+  inner.appendChild(list);
+  panel.appendChild(inner);
+
+  const toggle=()=>{
+    const open=trigger.getAttribute("aria-expanded")==="true";
+    trigger.setAttribute("aria-expanded",open?"false":"true");
+    panel.classList.toggle("open",!open);
+  };
+
+  trigger.addEventListener("click",toggle);
+  trigger.addEventListener("keydown",event=>{
+    if(event.key==="Enter" || event.key===" "){
+      event.preventDefault();
+      toggle();
+    }
+  });
+
+  fragment.appendChild(trigger);
+  fragment.appendChild(panel);
+  return fragment;
+}
+
+function renderSection(section){
+  const wrapper=document.createElement("section");
+  const heading=document.createElement("h2");
+  heading.textContent=section.title;
+  wrapper.appendChild(heading);
+
+  const list=document.createElement("div");
+  list.className="link-list";
+
+  section.items.forEach(item=>{
+    if(item.expandable){
+      list.appendChild(renderExpandable(item));
+      return;
+    }
+
+    const link=document.createElement("a");
+    link.className="link-card";
+    link.href=item.href;
+    link.target="_blank";
+    link.rel="noopener noreferrer";
+
+    const image=document.createElement("img");
+    image.className="link-image";
+    image.src=item.image;
+    image.alt="";
+    image.loading="lazy";
+
+    const title=document.createElement("span");
+    title.className="link-title";
+    title.textContent=item.title;
+
+    const arrow=document.createElement("span");
+    arrow.className="link-arrow";
+
+    link.appendChild(image);
+    link.appendChild(title);
+    link.appendChild(arrow);
+    list.appendChild(link);
+  });
+
+  wrapper.appendChild(list);
+
+  if(section.disclaimer){
+    const disclaimer=document.createElement("p");
+    disclaimer.className="disclaimer";
+
+    const mark=document.createElement("span");
+    mark.className="disclaimer-mark";
+    mark.textContent="*";
+
+    disclaimer.appendChild(mark);
+    disclaimer.appendChild(document.createTextNode(section.disclaimer));
+    wrapper.appendChild(disclaimer);
+  }
+
+  return wrapper;
+}
+
+async function init(){
+  const language=getLanguage();
+
+  let common;
+  let article;
+
+  try{
+    common=await loadJson(`lang/common/${language}.json`);
+  }catch{
+    common=await loadJson(`lang/common/${DEFAULT_LANGUAGE}.json`);
+  }
+
+  try{
+    article=await loadJson(`lang/links/${language}.json`);
+  }catch{
+    article=await loadJson(`lang/links/${DEFAULT_LANGUAGE}.json`);
+  }
+
+  applyCommon(common);
+
+  document.querySelectorAll("[data-i18n]").forEach(element=>{
+    const key=element.dataset.i18n;
+
+    if(key.startsWith("links.")){
+      const value=getValue(article,key);
+
+      if(value!==null){
+        element.innerHTML=value;
+      }
+    }
+  });
+
+  document.title=getValue(article,"links.title")||"Magic Rampage";
+
+  const description=document.querySelector('meta[name="description"]');
+  const descriptionValue=getValue(article,"links.description");
+
+  if(description && descriptionValue){
+    description.content=descriptionValue;
+  }
+
+  const coverAlt=getValue(article,"links.cover_alt");
+
+  if(coverAlt){
+    document.getElementById("coverImage").alt=coverAlt;
+  }
+
+  const body=document.getElementById("article-body");
+
+  article.sections.forEach((section,index)=>{
+    if(index===2 && article.disclaimer){
+      section.disclaimer=article.disclaimer;
+    }
+    body.appendChild(renderSection(section));
+  });
+
+  document.documentElement.lang=language;
+}
+
+init();
+</script>
+
+</body>
+</html>
