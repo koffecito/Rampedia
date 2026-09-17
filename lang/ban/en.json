@@ -23,13 +23,13 @@
         "image_alt": "Tavern ban message"
       },
       {
-        "subtitle": "Weekly Level",
+        "subtitle": "Weekly Dungeon",
         "paragraphs": [
           "When an account is banned, the following restrictions may appear:"
         ],
         "list": [
-          "The Weekly Level reward is always +1 token",
-          "You cannot increase the Weekly Level difficulty above “Easy”"
+          "The Weekly Dungeon reward is always +1 token",
+          "You cannot increase the Weekly Dungeon difficulty above “Easy”"
         ],
         "image": "images/ban/weekly-en.jpg",
         "image_alt": "Weekly Level ban"
@@ -81,7 +81,7 @@
       {
         "paragraphs": [
           "It is recommended to contact support in English.",
-          "More information about how and where to properly contact game support can be found in the separate article: <a class=\"article-link\" href=\"article-support.html\">Go to article</a>"
+          "More information about how and where to properly contact game support can be found in the separate article: <a class=\"article-link\" href=\"articles/support.html\">Go to article</a>"
         ]
       },
       {
