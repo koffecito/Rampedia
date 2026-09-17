@@ -42,7 +42,7 @@
         {
           "title": "Орден Творения",
           "href": "https://rampagers.tv/",
-          "image": "images/links/order-of-creation.jpg"
+          "image": "images/links/rampagers.jpg"
         },
         {
           "title": "Magic Rampage League",
@@ -52,12 +52,12 @@
         {
           "title": "BETA-Тест",
           "href": "https://play.google.com/apps/testing/com.asanteegames.magicrampage",
-          "image": "images/links/beta-test.jpg"
+          "image": "images/links/beta.jpg"
         },
         {
           "title": "Объединение аккаунтов",
           "href": "https://support.magicrampage.com/",
-          "image": "images/links/account-linking.jpg"
+          "image": "images/links/support.jpg"
         }
       ]
     },
