@@ -1,0 +1,586 @@
+{
+  "label": "Achievements",
+  "title": "All Magic Rampage Achievements",
+  "sections": [
+    {
+      "title": "Rampage+",
+      "items": [
+        {
+          "number": 1,
+          "title": "Dirty-faced Souls",
+          "description": "Complete 100% on Rampage+ mode. Find all secret areas and diamonds."
+        },
+        {
+          "number": 2,
+          "title": "Like a Time Patroller!",
+          "description": "Complete 101% on Rampage+ mode. Find all secret areas, and replay Chapters 1, 2 and 3 without taking any damage."
+        },
+        {
+          "number": 3,
+          "title": "Bow down to the King!",
+          "description": "Complete 102% of the game on Rampage+ mode. Complete all dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage."
+        },
+        {
+          "number": 4,
+          "title": "Witch-hunt+",
+          "description": "Defeat The Warlock Boss on Rampage+ mode."
+        },
+        {
+          "number": 5,
+          "title": "Bound together+",
+          "description": "Join the King after defeating the Warlock on Rampage+ mode."
+        }
+      ]
+    },
+    {
+      "title": "Normal Mode",
+      "items": [
+        {
+          "number": 1,
+          "title": "Vase breaker",
+          "description": "Destroy a vase on the Start screen."
+        },
+        {
+          "number": 2,
+          "title": "Save That Dude!",
+          "description": "Keep That Dude from being attacked in Chapter 1 Dungeon level 2."
+        },
+        {
+          "number": 3,
+          "title": "Keep That Dude alive!",
+          "description": "Help That Dude in Chapter 1 Dungeon level 8 and keep him alive."
+        },
+        {
+          "number": 4,
+          "title": "Armed and dangerous",
+          "description": "Get your first weapon."
+        },
+        {
+          "number": 5,
+          "title": "Head shot!",
+          "description": "Hit an enemy with a head shot."
+        },
+        {
+          "number": 6,
+          "title": "Zombie killer",
+          "description": "Kill a zombie."
+        },
+        {
+          "number": 7,
+          "title": "Spider killer",
+          "description": "Kill a spider."
+        },
+        {
+          "number": 8,
+          "title": "The Bone Collector",
+          "description": "Defeat a skeleton."
+        },
+        {
+          "number": 9,
+          "title": "Mr. MacGyver",
+          "description": "Access the secret area in Chapter 1 Dungeon Bonus level 3."
+        },
+        {
+          "number": 10,
+          "title": "There and Back Again",
+          "description": "Revive after death."
+        },
+        {
+          "number": 11,
+          "title": "Class consciousness",
+          "description": "Learn and perform the special skill of your class in Chapter 1 Dungeon level 6."
+        },
+        {
+          "number": 12,
+          "title": "Know your Enemy",
+          "description": "Read all the tips."
+        },
+        {
+          "number": 13,
+          "title": "Over 100% complete!",
+          "description": "Complete 101%. Find all secret areas of the game, and replay Chapters 1, 2 and 3 without taking any damage."
+        },
+        {
+          "number": 14,
+          "title": "Did the whole thing!",
+          "description": "Complete 100% of the game. Find all secret areas and diamonds."
+        },
+        {
+          "number": 15,
+          "title": "Flawless victory!",
+          "description": "Get a star by replaying a level without taking any damage."
+        },
+        {
+          "number": 16,
+          "title": "Ecstasy of Gold",
+          "description": "Buy more gold for your character."
+        },
+        {
+          "number": 17,
+          "title": "Demon slayer",
+          "description": "Beat the Boss in Chapter 1."
+        },
+        {
+          "number": 18,
+          "title": "Get in the Ring",
+          "description": "Access the secret area in Chapter 2 Dungeon Bonus level 1."
+        },
+        {
+          "number": 19,
+          "title": "The lost Flip-Flop",
+          "description": "Find the lost Flip-Flop."
+        },
+        {
+          "number": 20,
+          "title": "The Untold Story",
+          "description": "Let That Dude tell you The Untold Story in Chapter 2 Dungeon level 4."
+        },
+        {
+          "number": 21,
+          "title": "That Dude must live!",
+          "description": "Keep That Dude alive until the end of the level."
+        },
+        {
+          "number": 22,
+          "title": "I could beat Ghouls 'N Ghosts",
+          "description": "Get a star on all first 15 levels."
+        },
+        {
+          "number": 23,
+          "title": "Changing in the air",
+          "description": "Get to the top of the highest point in Chapter 2 Dungeon level 6."
+        },
+        {
+          "number": 24,
+          "title": "Runeforge",
+          "description": "Upgrade an item."
+        },
+        {
+          "number": 25,
+          "title": "Ride the Wind",
+          "description": "Reach the last chest in Chapter 2 Dungeon level 7."
+        },
+        {
+          "number": 26,
+          "title": "Ghostbusters",
+          "description": "Defeat a ghost in Chapter 2 Dungeon level 7."
+        },
+        {
+          "number": 27,
+          "title": "Why so curious?",
+          "description": "Access the locked area in Chapter 2 Dungeon Bonus level 7."
+        },
+        {
+          "number": 28,
+          "title": "Loot from the future",
+          "description": "Find at least one of the two hidden chests in Chapter 1 Dungeon level 3."
+        },
+        {
+          "number": 29,
+          "title": "The Untold Story 2",
+          "description": "Hear what The Captain has to say about Portals and giant winged creatures in Chapter 2 Dungeon level 9."
+        },
+        {
+          "number": 30,
+          "title": "Evil thing in spider form",
+          "description": "Defeat the giant spider that lives in the swamp."
+        },
+        {
+          "number": 31,
+          "title": "I did it intentionally, to...",
+          "description": "Find The Lost Hammer."
+        },
+        {
+          "number": 32,
+          "title": "That Dude still lives",
+          "description": "Meet That Dude in Chapter 3 Dungeon level 5 (if he survived Chapter 2 Dungeon level 4)."
+        },
+        {
+          "number": 33,
+          "title": "That Dude's story",
+          "description": "Listen to what That Dude has to say in Chapter 1 Dungeon level 8 (if he survived Chapter 1 Dungeon level 2)."
+        },
+        {
+          "number": 34,
+          "title": "Breaker of Chains",
+          "description": "Release The Wizard of the Oracle in Chapter 3 Dungeon level 9."
+        },
+        {
+          "number": 35,
+          "title": "I saw a giant",
+          "description": "Kill a giant."
+        },
+        {
+          "number": 36,
+          "title": "Witch-hunt",
+          "description": "Defeat The Warlock Boss."
+        },
+        {
+          "number": 37,
+          "title": "That post-credits thing",
+          "description": "Watch the post-credits scene."
+        },
+        {
+          "number": 38,
+          "title": "50 kills",
+          "description": "Kill 50 enemies in Survival Mode."
+        },
+        {
+          "number": 39,
+          "title": "100 kills",
+          "description": "Kill 100 enemies in Survival Mode."
+        },
+        {
+          "number": 40,
+          "title": "200 kills",
+          "description": "Kill 200 enemies in Survival Mode."
+        },
+        {
+          "number": 41,
+          "title": "300 kills",
+          "description": "Kill 300 enemies in Survival Mode."
+        },
+        {
+          "number": 42,
+          "title": "Unlock all survival levels",
+          "description": "Unlock every survival level by reaching all minimum scores."
+        },
+        {
+          "number": 43,
+          "title": "1000 kills? WTF!",
+          "description": "Kill 1000 enemies in Survival Mode."
+        },
+        {
+          "number": 44,
+          "title": "Pimp my character",
+          "description": "Use the Character Editor to change your avatar's head."
+        },
+        {
+          "number": 45,
+          "title": "More storage",
+          "description": "Buy the inventory expansion chest in the Shop."
+        },
+        {
+          "number": 46,
+          "title": "Even more storage!",
+          "description": "Buy the second expansion chest in the shop."
+        },
+        {
+          "number": 47,
+          "title": "Impossibly huge",
+          "description": "Buy the third expansion chest."
+        },
+        {
+          "number": 48,
+          "title": "Interdimensional storage",
+          "description": "Buy the fourth expansion chest. You really need all this space? We won't judge. Much."
+        },
+        {
+          "number": 49,
+          "title": "The Truth Is Out There",
+          "description": "Travel through the Portal and find out what is beyond."
+        },
+        {
+          "number": 50,
+          "title": "Chapter 4 is too difficult!",
+          "description": "Complete 102% of the game. Complete all Dungeons, find all secret areas and replay all dungeons up to the end of Chapter 4 without taking any damage."
+        },
+        {
+          "number": 51,
+          "title": "May the Magic be with you",
+          "description": "Find the lost saber."
+        },
+        {
+          "number": 52,
+          "title": "Dragonslayer",
+          "description": "Defeat the Great Red Dragon."
+        },
+        {
+          "number": 53,
+          "title": "Breaker of Chains 2",
+          "description": "Release the Moon-Keeper in Chapter 4, Dungeon level 9."
+        },
+        {
+          "number": 54,
+          "title": "Bound together",
+          "description": "Join the King after defeating the Warlock."
+        },
+        {
+          "number": 55,
+          "title": "Bank for your buck",
+          "description": "Deposit an item in the bank."
+        },
+        {
+          "number": 56,
+          "title": "Dirty-faced Rookie",
+          "description": "Finish a Solo Dungeon in the Competitive Mode."
+        },
+        {
+          "number": 57,
+          "title": "Bring it on!",
+          "description": "Start a match against another player in the Competitive Mode."
+        },
+        {
+          "number": 58,
+          "title": "I came, I saw, I conquered",
+          "description": "Win a match against another player in the Competitive Mode."
+        },
+        {
+          "number": 59,
+          "title": "It's the taking part that counts...",
+          "description": "Don't ever try to lose a match against another player, but if you do, this achievement will be unlocked."
+        },
+        {
+          "number": 60,
+          "title": "Friends will be friends",
+          "description": "Add a friend in the Competitive Mode."
+        },
+        {
+          "number": 61,
+          "title": "Friendly fire",
+          "description": "Challenge a friend in the Competitive Mode."
+        },
+        {
+          "number": 62,
+          "title": "R for Revenge",
+          "description": "Win a revenge match in the Competitive Mode."
+        },
+        {
+          "number": 63,
+          "title": "The Champion Slayer",
+          "description": "Beat any champion in the Hall of Champions."
+        },
+        {
+          "number": 64,
+          "title": "It's time!",
+          "description": "Collect the 420 coins that floats in the air at 3-6. Do it during a specific time of day."
+        },
+        {
+          "number": 65,
+          "title": "Bronze Beast",
+          "description": "Raise your Rank up to Bronze in the Competitive Mode."
+        },
+        {
+          "number": 66,
+          "title": "Silver Soldier",
+          "description": "Raise your Rank up to Silver in the Competitive Mode."
+        },
+        {
+          "number": 67,
+          "title": "Going Gold!",
+          "description": "Raise your Rank up to Gold in the Competitive Mode."
+        },
+        {
+          "number": 68,
+          "title": "Pure Platinum!",
+          "description": "Raise your Rank up to Platinum in the Competitive Mode."
+        },
+        {
+          "number": 69,
+          "title": "You crazy Diamond!",
+          "description": "Raise your Rank up to Diamond in the Competitive Mode. Shine on!"
+        },
+        {
+          "number": 70,
+          "title": "Veteran Rampager",
+          "description": "Be in the top 500 list of best ranked players. You can see your current position in the ranking section of your inventory."
+        },
+        {
+          "number": 71,
+          "title": "True hero",
+          "description": "Be in the top 100 list of best ranked players. You can see your current position in the ranking section of your inventory."
+        },
+        {
+          "number": 72,
+          "title": "We are the champions!",
+          "description": "Join the top 15 players featured in the Hall of Champions."
+        },
+        {
+          "number": 73,
+          "title": "The number one!",
+          "description": "Get to the top of the Ranking leaderboard."
+        },
+        {
+          "number": 74,
+          "title": "Challenge Accepted",
+          "description": "Finish a Challenge from the Weekly Challenge Portal."
+        },
+        {
+          "number": 75,
+          "title": "The End of the World",
+          "description": "Get to the surface for the first time in Dungeon 5-1."
+        },
+        {
+          "number": 76,
+          "title": "It's Amazing!",
+          "description": "Beat the Amazing Score Goal in the Weekly Dungeons. You need to beat Ordinary and Super goals first."
+        },
+        {
+          "number": 77,
+          "title": "A story to be told",
+          "description": "Listen to what the Dude has to say at 5-3 prologue about the turbulent portal crossing."
+        },
+        {
+          "number": 78,
+          "title": "The Untold Story 3",
+          "description": "Listen to what the King has to say in his lab at 5-3 prologue."
+        },
+        {
+          "number": 79,
+          "title": "Skilled but dirty-faced",
+          "description": "Learn three skills from the Skill Tree."
+        },
+        {
+          "number": 80,
+          "title": "The super skill!",
+          "description": "Learn one of the Super Skills from the Skill Tree."
+        },
+        {
+          "number": 81,
+          "title": "The ninth circle",
+          "description": "Get to the frozen underground chambers of the planet in Dungeon 5-4."
+        },
+        {
+          "number": 82,
+          "title": "The darkest side of the Moon",
+          "description": "Watch the bonus scene after finishing Dungeon 5-4 with all three diamonds."
+        },
+        {
+          "number": 83,
+          "title": "Sharp Dressed Minion",
+          "description": "Change your minion's look using a custom skin. You can purchase new skins in the Prize Room."
+        },
+        {
+          "number": 84,
+          "title": "Sinister Riddle",
+          "description": "Solve the Sinister Obelisk's riddle."
+        },
+        {
+          "number": 85,
+          "title": "In your honor, have a toast!",
+          "description": "Buy a drink for another player in the Tavern."
+        },
+        {
+          "number": 86,
+          "title": "Bullseye Wizard",
+          "description": "Score 990,000 or higher in the Darts game inside the Tavern."
+        },
+        {
+          "number": 87,
+          "title": "Settle a score",
+          "description": "Score 35,000 or higher in the Salesman's Smackdown game inside the Tavern."
+        },
+        {
+          "number": 88,
+          "title": "Meet me outside!",
+          "description": "Challenge a friend to a Duel match. You can add friends and challenge them to a Duel in the Tavern."
+        },
+        {
+          "number": 89,
+          "title": "The taste of victory",
+          "description": "Win your first casual Duel. You can find opponents in the Tavern."
+        },
+        {
+          "number": 90,
+          "title": "Master of Destiny!",
+          "description": "Win a Ranked Duel match. You can find opponents through the Duels of Destiny portal located in the Tavern."
+        },
+        {
+          "number": 91,
+          "title": "Rise of the Sentinel",
+          "description": "Raise your Rank up to Master Sentinel in the Duels."
+        },
+        {
+          "number": 92,
+          "title": "Keeper of the Realm",
+          "description": "Raise your Rank up to Grandmaster Sentinel in the Duels."
+        },
+        {
+          "number": 93,
+          "title": "Through the Rifts",
+          "description": "Raise your Rank up to Time Traveller in the Duels."
+        },
+        {
+          "number": 94,
+          "title": "Warden of Time",
+          "description": "Raise your Rank up to Time Patroller in the Duels."
+        },
+        {
+          "number": 95,
+          "title": "Keeper of the Cosmos",
+          "description": "Raise your Rank up to Cosmic Patroller in the Duels!"
+        },
+        {
+          "number": 96,
+          "title": "First steps into destiny",
+          "description": "Explore every Combat Zone and complete your initial training for the Duels of Destiny."
+        }
+      ]
+    },
+    {
+      "title": "Coming Soon",
+      "items": [
+        {
+          "number": 1,
+          "title": "Payback Time",
+          "description": "Kill the Salesman in the alternative reality."
+        },
+        {
+          "number": 2,
+          "title": "Time Patroller's Time",
+          "description": "Kill the Time Patroller in the alternative reality."
+        },
+        {
+          "number": 3,
+          "title": "Kingslayer",
+          "description": "Kill the King in the alternative reality."
+        },
+        {
+          "number": 4,
+          "title": "Pixelated Arsenal",
+          "description": "Collect a Retro stylized item in the alternative reality."
+        },
+        {
+          "number": 5,
+          "title": "Sapphire Medallion Holder",
+          "description": "Finish 15 distinct Weekly Dungeons."
+        },
+        {
+          "number": 6,
+          "title": "Emerald Medallion Holder",
+          "description": "Finish 30 distinct Weekly Dungeons."
+        },
+        {
+          "number": 7,
+          "title": "Ruby Medallion Holder",
+          "description": "Finish 50 distinct Weekly Dungeons."
+        },
+        {
+          "number": 8,
+          "title": "The Honorable Star",
+          "description": "Complete 30 Star Challenges in 30 distinct Weekly Dungeons."
+        },
+        {
+          "number": 9,
+          "title": "The Mighty Star",
+          "description": "Complete 50 Star Challenges in 50 distinct Weekly Dungeons."
+        },
+        {
+          "number": 10,
+          "title": "Honorable Runner",
+          "description": "Complete 30 Time Challenges in 30 distinct Weekly Dungeons."
+        },
+        {
+          "number": 11,
+          "title": "Mighty Runner",
+          "description": "Complete 50 Time Challenges in 50 distinct Weekly Dungeons."
+        },
+        {
+          "number": 12,
+          "title": "The 103 Lamentations",
+          "description": "Complete 103%. Complete all Dungeons, find all secret areas in the game and replay all dungeons up to the end of Chapter 5 without taking any damage."
+        }
+      ]
+    }
+  ]
+}
