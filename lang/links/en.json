@@ -1,0 +1,135 @@
+{
+  "links": {
+    "label": "Links",
+    "title": "Useful Magic Rampage Links",
+    "description": "Official and useful links related to Magic Rampage.",
+    "cover_alt": "Magic Rampage"
+  },
+  "sections": [
+    {
+      "title": "Developers",
+      "items": [
+        {
+          "title": "André Santee",
+          "href": "https://youtube.com/@andresantee",
+          "image": "images/links/andre-santee.jpg"
+        },
+        {
+          "title": "Magic Rampage",
+          "href": "https://youtube.com/@magicrampagedev",
+          "image": "images/links/magic-rampage-dev.jpg"
+        },
+        {
+          "title": "Asantee Games",
+          "href": "https://www.asanteegames.com/",
+          "image": "images/links/asantee-games.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Game",
+      "items": [
+        {
+          "title": "Magic Rampage",
+          "href": "https://magicrampage.com/",
+          "image": "images/links/magic-rampage.jpg"
+        },
+        {
+          "title": "XSolla Shop",
+          "href": "https://magic-rampage.xsolla.site/ru-RU",
+          "image": "images/links/xsolla-shop.jpg"
+        },
+        {
+          "title": "Order of Creation",
+          "href": "https://rampagers.tv/",
+          "image": "images/links/order-of-creation.jpg"
+        },
+        {
+          "title": "Magic Rampage League",
+          "href": "https://www.magicrampageleague.com/",
+          "image": "images/links/magic-rampage-league.jpg"
+        },
+        {
+          "title": "BETA-Test",
+          "href": "https://play.google.com/apps/testing/com.asanteegames.magicrampage",
+          "image": "images/links/beta-test.jpg"
+        },
+        {
+          "title": "Account Linking",
+          "href": "https://support.magicrampage.com/",
+          "image": "images/links/account-linking.jpg"
+        }
+      ]
+    },
+    {
+      "title": "Communities",
+      "items": [
+        {
+          "title": "Telegram",
+          "expandable": true,
+          "image": "images/links/telegram.jpg",
+          "sublinks": [
+            {
+              "title": "Magic Rampage",
+              "href": "https://t.me/AssanteGames",
+              "image": "images/links/magic-rampage.jpg",
+              "badge": "Channel"
+            },
+            {
+              "title": "Magic Rampage Community",
+              "href": "https://t.me/AssanteGamesChat",
+              "image": "images/links/magic-rampage-community.jpg",
+              "badge": "Group"
+            },
+            {
+              "title": "MRC Forum",
+              "href": "https://t.me/MRCForum",
+              "image": "images/links/mrc-forum.jpg",
+              "badge": "Forum"
+            },
+            {
+              "separator": true
+            },
+            {
+              "title": "SDori & Friends",
+              "href": "https://t.me/sdroimod",
+              "image": "images/links/sdori.jpg",
+              "badge": "Group"
+            }
+          ]
+        },
+        {
+          "title": "Discord",
+          "href": "https://discord.gg/magic-rampage-community-480454484711964672",
+          "image": "images/links/discord.jpg"
+        },
+        {
+          "title": "VK",
+          "href": "https://vk.com/asantee_vk",
+          "image": "images/links/vk.jpg"
+        },
+        {
+          "title": "Facebook*",
+          "href": "https://www.facebook.com/groups/magicrampage",
+          "image": "images/links/facebook.jpg"
+        },
+        {
+          "title": "Instagram*",
+          "href": "https://www.instagram.com/magicrampagegame/",
+          "image": "images/links/instagram.jpg"
+        },
+        {
+          "title": "Reddit",
+          "href": "https://www.reddit.com/r/magicrampage/",
+          "image": "images/links/reddit.jpg"
+        },
+        {
+          "title": "X",
+          "href": "https://x.com/magicrampage",
+          "image": "images/links/x.jpg"
+        }
+      ]
+    }
+  ],
+  "disclaimer": "Belongs to Meta, which is recognized as an extremist organization and banned in the Russian Federation"
+}
