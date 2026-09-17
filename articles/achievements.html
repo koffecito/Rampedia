@@ -381,7 +381,7 @@ h2{
 <main class="page">
 
 <nav class="topbar">
-<a class="back-link" href="index.html">
+<a class="back-link" href="../index.html">
 <svg class="back-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -392,7 +392,7 @@ h2{
 <article class="article">
 
 <div class="cover">
-<img src="images/achievements.jpg" alt="" id="coverImage">
+<img src="../images/achievements.jpg" alt="" id="coverImage">
 </div>
 
 <div class="article-content">
@@ -410,7 +410,7 @@ h2{
 <div class="telegram-list">
 
 <a class="telegram-button" href="https://t.me/AssanteGames" target="_blank" rel="noopener noreferrer">
-<img class="telegram-avatar" src="images/telegram/magic-rampage.jpg" alt="">
+<img class="telegram-avatar" src="../images/telegram/magic-rampage.jpg" alt="">
 <div class="telegram-info">
 <span class="telegram-name">Magic Rampage</span>
 </div>
@@ -419,7 +419,7 @@ h2{
 </a>
 
 <a class="telegram-button" href="https://t.me/AssanteGamesChat" target="_blank" rel="noopener noreferrer">
-<img class="telegram-avatar" src="images/telegram/magic-rampage-community.jpg" alt="">
+<img class="telegram-avatar" src="../images/telegram/magic-rampage-community.jpg" alt="">
 <div class="telegram-info">
 <span class="telegram-name community">
 <span>Magic Rampage</span>
@@ -431,7 +431,7 @@ h2{
 </a>
 
 <a class="telegram-button" href="https://t.me/MRCForum" target="_blank" rel="noopener noreferrer">
-<img class="telegram-avatar" src="images/telegram/mrc-forum.jpg" alt="">
+<img class="telegram-avatar" src="../images/telegram/mrc-forum.jpg" alt="">
 <div class="telegram-info">
 <span class="telegram-name">MRC Forum</span>
 </div>
@@ -541,15 +541,15 @@ async function init(){
   let article;
 
   try{
-    common=await loadJson(`lang/common/${language}.json`);
+    common=await loadJson(`../lang/common/${language}.json`);
   }catch{
-    common=await loadJson(`lang/common/${DEFAULT_LANGUAGE}.json`);
+    common=await loadJson(`../lang/common/${DEFAULT_LANGUAGE}.json`);
   }
 
   try{
-    article=await loadJson(`lang/achievements/${language}.json`);
+    article=await loadJson(`../lang/achievements/${language}.json`);
   }catch{
-    article=await loadJson(`lang/achievements/${DEFAULT_LANGUAGE}.json`);
+    article=await loadJson(`../lang/achievements/${DEFAULT_LANGUAGE}.json`);
   }
 
   applyCommon(common);

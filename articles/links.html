@@ -379,7 +379,7 @@ h2{
 <main class="page">
 
 <nav class="topbar">
-<a class="back-link" href="index.html">
+<a class="back-link" href="../index.html">
 <svg class="back-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -390,7 +390,7 @@ h2{
 <article class="article">
 
 <div class="cover">
-<img src="images/links.jpg" alt="" id="coverImage">
+<img src="../images/links.jpg" alt="" id="coverImage">
 </div>
 
 <div class="article-content">
@@ -606,15 +606,15 @@ async function init(){
   let article;
 
   try{
-    common=await loadJson(`lang/common/${language}.json`);
+    common=await loadJson(`../lang/common/${language}.json`);
   }catch{
-    common=await loadJson(`lang/common/${DEFAULT_LANGUAGE}.json`);
+    common=await loadJson(`../lang/common/${DEFAULT_LANGUAGE}.json`);
   }
 
   try{
-    article=await loadJson(`lang/links/${language}.json`);
+    article=await loadJson(`../lang/links/${language}.json`);
   }catch{
-    article=await loadJson(`lang/links/${DEFAULT_LANGUAGE}.json`);
+    article=await loadJson(`../lang/links/${DEFAULT_LANGUAGE}.json`);
   }
 
   applyCommon(common);
