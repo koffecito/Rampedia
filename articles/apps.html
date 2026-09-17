@@ -507,6 +507,13 @@ function applyCommon(data){
   });
 }
 
+function resolveAsset(path){
+  if(!path || /^(https?:|data:|\.\.\/)/i.test(path)) return path;
+  if(path.startsWith("articles/")) return path.slice(9);
+  if(path.startsWith("images/")) return `../${path}`;
+  return path;
+}
+
 function renderSection(section){
   const fragment=document.createDocumentFragment();
 
@@ -535,7 +542,7 @@ function renderSection(section){
     figure.className="screenshot";
 
     const image=document.createElement("img");
-    image.src=section.image;
+    image.src=resolveAsset(section.image);
     image.alt=section.image_alt||"";
     image.loading="lazy";
 
@@ -562,7 +569,7 @@ function renderSection(section){
 
     const link=document.createElement("a");
     link.className="download-link";
-    link.href=section.download.url;
+    link.href=resolveAsset(section.download.url);
     link.target="_blank";
     link.rel="noopener noreferrer";
     link.innerHTML=section.download.text;

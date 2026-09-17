@@ -510,6 +510,13 @@ function renderAchievement(item){
   return article;
 }
 
+function resolveAsset(path){
+  if(!path || /^(https?:|data:|\.\.\/)/i.test(path)) return path;
+  if(path.startsWith("articles/")) return path.slice(9);
+  if(path.startsWith("images/")) return `../${path}`;
+  return path;
+}
+
 function renderSection(section){
   const wrapper=document.createElement("section");
   wrapper.className="achievement-section";

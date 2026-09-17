@@ -521,6 +521,13 @@ function applyCommon(data){
   });
 }
 
+function resolveAsset(path){
+  if(!path || /^(https?:|data:|\.\.\/)/i.test(path)) return path;
+  if(path.startsWith("articles/")) return path.slice(9);
+  if(path.startsWith("images/")) return `../${path}`;
+  return path;
+}
+
 function renderSection(section){
   const fragment=document.createDocumentFragment();
 
@@ -573,7 +580,7 @@ function renderSection(section){
     figure.className="screenshot";
 
     const image=document.createElement("img");
-    image.src=section.image;
+    image.src=resolveAsset(section.image);
     image.alt=section.image_alt||"";
     image.loading="lazy";
 
@@ -642,6 +649,10 @@ async function init(){
 
   article.ban.sections.forEach(section=>{
     body.appendChild(renderSection(section));
+  });
+
+  body.querySelectorAll("a[href^=\"articles/\"]").forEach(link=>{
+    link.href=link.getAttribute("href").slice(9);
   });
 
   document.documentElement.lang=language;

@@ -455,7 +455,7 @@ function renderSublink(item){
 
   const image=document.createElement("img");
   image.className="sublink-image";
-  image.src=item.image;
+  image.src=resolveAsset(item.image);
   image.alt="";
   image.loading="lazy";
 
@@ -494,7 +494,7 @@ function renderExpandable(item){
 
   const image=document.createElement("img");
   image.className="link-image";
-  image.src=item.image;
+  image.src=resolveAsset(item.image);
   image.alt="";
   image.loading="lazy";
 
@@ -541,6 +541,13 @@ function renderExpandable(item){
   return fragment;
 }
 
+function resolveAsset(path){
+  if(!path || /^(https?:|data:|\.\.\/)/i.test(path)) return path;
+  if(path.startsWith("articles/")) return path.slice(9);
+  if(path.startsWith("images/")) return `../${path}`;
+  return path;
+}
+
 function renderSection(section){
   const wrapper=document.createElement("section");
   const heading=document.createElement("h2");
@@ -564,7 +571,7 @@ function renderSection(section){
 
     const image=document.createElement("img");
     image.className="link-image";
-    image.src=item.image;
+    image.src=resolveAsset(item.image);
     image.alt="";
     image.loading="lazy";
 
