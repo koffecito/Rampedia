@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Все достижения Magic Rampage">
-<title>Magic Rampage — Achievements</title>
+<title>Magic Rampage</title>
+<meta name="description" content="">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0d0d0d;
-  --card:#151515;
-  --card2:#191919;
-  --border:#292929;
-  --text:#f2f2f2;
-  --muted:#a6a6a6;
-  --accent:#d6ad55;
+  --bg:#0d0f14;
+  --card:#151822;
+  --card-soft:#11141b;
+  --border:rgba(255,255,255,0.08);
+  --border-hover:rgba(216,162,74,0.32);
+  --text:#eef0f4;
+  --text-main:#d1d4dc;
+  --text-dim:#9da2af;
+  --accent:#d8a24a;
+  --accent-soft:rgba(216,162,74,0.15);
+  --font-body:'Inter',sans-serif;
+  --font-display:'Cinzel',serif;
 }
 
 *{
@@ -31,46 +36,48 @@ html{
 
 body{
   margin:0;
-  background:var(--bg);
+  min-height:100vh;
+  background:radial-gradient(900px 600px at 50% -150px,#202431 0%,var(--bg) 65%);
   color:var(--text);
-  font-family:Inter,Arial,sans-serif;
-  line-height:1.65;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
+  font-family:var(--font-body);
+  -webkit-font-smoothing:antialiased;
 }
 
 .page{
-  width:min(900px,calc(100% - 28px));
+  width:100%;
+  max-width:780px;
   margin:0 auto;
-  padding:20px 0 60px;
+  padding:25px 18px 60px;
 }
 
-.back{
+.topbar{
+  margin-bottom:22px;
+}
+
+.back-link{
   display:inline-flex;
   align-items:center;
-  gap:9px;
-  margin:0 0 16px;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:600;
-  transition:.2s;
+  gap:8px;
+  color:var(--text-dim);
+  font-size:12px;
+  font-weight:500;
+  text-decoration:none;
+  transition:color .2s ease;
 }
 
-.back:hover{
+.back-link:hover{
   color:var(--accent);
 }
 
-.back svg{
-  width:17px;
-  height:17px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:2;
-  stroke-linecap:round;
-  stroke-linejoin:round;
+.back-icon{
+  width:15px;
+  height:15px;
+  flex:0 0 15px;
+  transition:transform .2s ease;
+}
+
+.back-link:hover .back-icon{
+  transform:translateX(-2px);
 }
 
 .article{
@@ -81,9 +88,17 @@ a{
 }
 
 .cover{
+  width:100%;
+  aspect-ratio:16/9;
+  overflow:hidden;
+  background:#101219;
+}
+
+.cover img{
   display:block;
   width:100%;
-  height:auto;
+  height:100%;
+  object-fit:cover;
 }
 
 .article-content{
@@ -91,222 +106,271 @@ a{
 }
 
 .article-label{
-  margin-bottom:9px;
+  margin:0 0 10px;
   color:var(--accent);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.12em;
+  font-family:var(--font-display);
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 h1{
-  margin:0 0 32px;
-  color:#fff;
-  font-family:Cinzel,serif;
+  margin:0;
+  color:var(--text);
+  font-family:var(--font-display);
   font-size:clamp(29px,6vw,42px);
-  line-height:1.18;
+  line-height:1.2;
 }
 
-.section{
-  margin-top:42px;
+h2{
+  margin:40px 0 16px;
+  color:var(--text);
+  font-family:var(--font-display);
+  font-size:22px;
+  line-height:1.35;
 }
 
-.section:first-of-type{
-  margin-top:0;
-}
-
-.section-heading{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  margin:0 0 17px;
-  color:#fff;
-  font-family:Cinzel,serif;
-  font-size:clamp(21px,4vw,27px);
-  line-height:1.25;
-}
-
-.section-heading::before{
-  content:"";
-  flex:0 0 8px;
-  width:8px;
-  height:8px;
-  background:var(--accent);
-  transform:rotate(45deg);
+.achievement-section:first-child h2{
+  margin-top:40px;
 }
 
 .achievement-list{
-  display:grid;
-  gap:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin:18px 0 0;
 }
 
 .achievement{
   display:grid;
-  grid-template-columns:44px minmax(0,1fr);
-  gap:15px;
-  padding:15px 17px;
-  background:var(--card2);
+  grid-template-columns:40px minmax(0,1fr);
+  gap:13px;
+  padding:13px 14px;
+  background:var(--card-soft);
   border:1px solid var(--border);
-  border-radius:13px;
-  transition:border-color .2s,transform .2s,background .2s;
+  border-radius:12px;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
 }
 
 .achievement:hover{
-  border-color:#3a3a3a;
-  background:#1c1c1c;
   transform:translateY(-1px);
+  border-color:var(--border-hover);
+  background:#171b24;
 }
 
 .achievement-number{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:38px;
-  height:38px;
+  width:34px;
+  height:34px;
   margin-top:1px;
-  border:1px solid rgba(214,173,85,.35);
-  border-radius:10px;
+  border:1px solid rgba(216,162,74,.28);
+  border-radius:8px;
   color:var(--accent);
-  font-size:12px;
+  font-size:10px;
   font-weight:700;
   line-height:1;
 }
 
+.achievement-content{
+  min-width:0;
+}
+
 .achievement-title{
   margin:0 0 5px;
-  color:#fff;
-  font-size:15px;
-  font-weight:700;
+  color:var(--text);
+  font-size:13.5px;
+  font-weight:600;
   line-height:1.4;
 }
 
 .achievement-description{
   margin:0;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.65;
+  color:var(--text-main);
+  font-size:13px;
+  line-height:1.7;
 }
 
 .telegram-section{
+  margin-top:45px;
+  padding-top:30px;
   border-top:1px solid var(--border);
-  padding:30px 40px 34px;
 }
 
-.telegram-title{
-  margin:0 0 17px;
-  color:#fff;
-  font-family:Cinzel,serif;
-  font-size:21px;
+.telegram-heading{
+  margin:0 0 20px;
+  font-family:var(--font-display);
+  font-size:22px;
+  line-height:1.35;
 }
 
 .telegram-list{
-  display:grid;
+  display:flex;
+  flex-direction:column;
   gap:10px;
 }
 
-.telegram-link{
+.telegram-button{
+  position:relative;
   display:flex;
   align-items:center;
-  gap:13px;
-  min-height:62px;
-  padding:9px 13px;
-  background:#191919;
+  min-height:68px;
+  padding:9px 150px 9px 9px;
+  background:var(--card-soft);
   border:1px solid var(--border);
-  border-radius:13px;
-  transition:.2s;
+  border-radius:14px;
+  color:var(--text);
+  text-decoration:none;
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
 }
 
-.telegram-link:hover{
-  border-color:#3a3a3a;
-  transform:translateY(-1px);
+.telegram-button:hover{
+  transform:translateY(-2px);
+  border-color:var(--border-hover);
+  background:#171b24;
 }
 
 .telegram-avatar{
-  width:43px;
-  height:43px;
-  flex:0 0 43px;
-  border-radius:50%;
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  margin-right:13px;
+  border-radius:12px;
   object-fit:cover;
+  background:#20242e;
 }
 
 .telegram-info{
   min-width:0;
-  flex:1;
 }
 
 .telegram-name{
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  line-height:1.3;
+  display:block;
+  color:var(--text);
+  font-size:13.5px;
+  font-weight:600;
+  line-height:1.35;
+}
+
+.telegram-name.community{
+  max-width:125px;
+}
+
+.telegram-name.community span{
+  display:block;
 }
 
 .telegram-badge{
-  display:inline-block;
-  margin-top:3px;
+  position:absolute;
+  top:50%;
+  right:43px;
+  transform:translateY(-50%);
+  padding:4px 8px;
+  border:1px solid rgba(216,162,74,.28);
+  border-radius:5px;
+  background:rgba(216,162,74,.08);
   color:var(--accent);
-  font-size:11px;
-  font-weight:600;
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
 
 .telegram-arrow{
-  color:#777;
-  font-size:22px;
-  line-height:1;
+  position:absolute;
+  top:50%;
+  right:17px;
+  width:8px;
+  height:8px;
+  border-top:1px solid var(--accent);
+  border-right:1px solid var(--accent);
+  transform:translateY(-50%) rotate(45deg);
+  opacity:.75;
 }
 
-.footer{
-  padding-top:25px;
+.author{
+  margin-top:28px;
   text-align:center;
-  color:#777;
-  font-size:12px;
+  color:#626773;
+  font-size:11px;
 }
 
-.footer a{
+.author-name{
   color:var(--accent);
+  font-weight:600;
 }
 
-@media(max-width:620px){
+@media(max-width:520px){
   .page{
-    width:min(100% - 20px,900px);
-    padding-top:12px;
+    padding:20px 12px 45px;
+  }
+
+  .article{
+    border-radius:17px;
   }
 
   .article-content{
-    padding:27px 17px 31px;
-  }
-
-  .telegram-section{
-    padding:25px 17px 29px;
+    padding:28px 20px 34px;
   }
 
   h1{
-    margin-bottom:27px;
+    font-size:28px;
   }
 
-  .section{
+  h2{
     margin-top:34px;
+    font-size:20px;
   }
 
   .achievement{
-    grid-template-columns:38px minmax(0,1fr);
-    gap:12px;
-    padding:13px;
+    grid-template-columns:34px minmax(0,1fr);
+    gap:11px;
+    padding:12px;
   }
 
   .achievement-number{
-    width:34px;
-    height:34px;
-    border-radius:9px;
+    width:30px;
+    height:30px;
   }
 
   .achievement-title{
-    font-size:14px;
+    font-size:13px;
   }
 
   .achievement-description{
+    font-size:12.5px;
+    line-height:1.7;
+  }
+
+  .telegram-button{
+    min-height:64px;
+    padding:9px 125px 9px 9px;
+  }
+
+  .telegram-avatar{
+    width:44px;
+    height:44px;
+    flex-basis:44px;
+    margin-right:11px;
+  }
+
+  .telegram-name{
     font-size:13px;
-    line-height:1.6;
+  }
+
+  .telegram-name.community{
+    max-width:105px;
+  }
+
+  .telegram-badge{
+    right:36px;
+  }
+
+  .telegram-arrow{
+    right:15px;
   }
 }
 </style>
@@ -316,110 +380,118 @@ h1{
 
 <main class="page">
 
-  <a class="back" href="index.html" data-i18n="back">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M15 18l-6-6 6-6"></path>
-    </svg>
-    <span></span>
-  </a>
+<nav class="topbar">
+<a class="back-link" href="index.html">
+<svg class="back-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<span data-i18n="back"></span>
+</a>
+</nav>
 
-  <article class="article">
+<article class="article">
 
-    <img class="cover" src="images/achievements.jpg" alt="">
+<div class="cover">
+<img src="images/achievements.jpg" alt="" id="coverImage">
+</div>
 
-    <div class="article-content">
-      <div class="article-label" id="article-label"></div>
-      <h1 id="article-title"></h1>
-      <div id="achievement-sections"></div>
-    </div>
+<div class="article-content">
 
-    <section class="telegram-section">
-      <h2 class="telegram-title" id="telegram-title"></h2>
+<p class="article-label" data-i18n="achievements.label"></p>
 
-      <div class="telegram-list">
+<h1 data-i18n="achievements.title"></h1>
 
-        <a class="telegram-link" href="https://t.me/AssanteGames" target="_blank" rel="noopener">
-          <img class="telegram-avatar" src="images/telegram/magic-rampage.jpg" alt="">
-          <div class="telegram-info">
-            <div class="telegram-name">Magic Rampage</div>
-            <div class="telegram-badge" data-i18n="channel"></div>
-          </div>
-          <div class="telegram-arrow">›</div>
-        </a>
+<div id="article-body"></div>
 
-        <a class="telegram-link" href="https://t.me/AssanteGamesChat" target="_blank" rel="noopener">
-          <img class="telegram-avatar" src="images/telegram/magic-rampage-community.jpg" alt="">
-          <div class="telegram-info">
-            <div class="telegram-name">Magic Rampage<br>Community</div>
-            <div class="telegram-badge" data-i18n="group"></div>
-          </div>
-          <div class="telegram-arrow">›</div>
-        </a>
+<section class="telegram-section">
 
-        <a class="telegram-link" href="https://t.me/MRCForum" target="_blank" rel="noopener">
-          <img class="telegram-avatar" src="images/telegram/mrc-forum.jpg" alt="">
-          <div class="telegram-info">
-            <div class="telegram-name">MRC Forum</div>
-            <div class="telegram-badge" data-i18n="forum"></div>
-          </div>
-          <div class="telegram-arrow">›</div>
-        </a>
+<h2 class="telegram-heading" data-i18n="telegram.title"></h2>
 
-      </div>
+<div class="telegram-list">
 
-      <div class="footer">
-        Made by <a href="https://t.me/Koffecito" target="_blank" rel="noopener">Kofeman</a> (@Koffecito)
-      </div>
-    </section>
+<a class="telegram-button" href="https://t.me/AssanteGames" target="_blank" rel="noopener noreferrer">
+<img class="telegram-avatar" src="images/telegram/magic-rampage.jpg" alt="">
+<div class="telegram-info">
+<span class="telegram-name">Magic Rampage</span>
+</div>
+<span class="telegram-badge" data-i18n="telegram.channel"></span>
+<span class="telegram-arrow"></span>
+</a>
 
-  </article>
+<a class="telegram-button" href="https://t.me/AssanteGamesChat" target="_blank" rel="noopener noreferrer">
+<img class="telegram-avatar" src="images/telegram/magic-rampage-community.jpg" alt="">
+<div class="telegram-info">
+<span class="telegram-name community">
+<span>Magic Rampage</span>
+<span>Community</span>
+</span>
+</div>
+<span class="telegram-badge" data-i18n="telegram.group"></span>
+<span class="telegram-arrow"></span>
+</a>
+
+<a class="telegram-button" href="https://t.me/MRCForum" target="_blank" rel="noopener noreferrer">
+<img class="telegram-avatar" src="images/telegram/mrc-forum.jpg" alt="">
+<div class="telegram-info">
+<span class="telegram-name">MRC Forum</span>
+</div>
+<span class="telegram-badge" data-i18n="telegram.forum"></span>
+<span class="telegram-arrow"></span>
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+</article>
+
+<footer class="author">
+<span data-i18n="made_by"></span>
+<span class="author-name">Kofeman</span>
+(@Koffecito)
+</footer>
 
 </main>
 
 <script>
-const translations={
-  ru:{
-    back:"Назад",
-    channel:"Канал",
-    group:"Группа",
-    forum:"Форум",
-    telegram:"Наши сообщества в Telegram"
-  },
-  en:{
-    back:"Back",
-    channel:"Channel",
-    group:"Group",
-    forum:"Forum",
-    telegram:"Our Telegram communities"
-  }
-};
+const DEFAULT_LANGUAGE="en";
 
 function getLanguage(){
-  return navigator.language && navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
+  const language=(navigator.language||"").toLowerCase();
+  return language.startsWith("ru")?"ru":"en";
 }
 
-function applyCommon(language){
-  document.documentElement.lang=language;
+async function loadJson(path){
+  const response=await fetch(path);
+  if(!response.ok) throw new Error("File not found");
+  return await response.json();
+}
 
+function getValue(object,path){
+  return path.split(".").reduce((value,key)=>{
+    return value && value[key]!==undefined ? value[key] : null;
+  },object);
+}
+
+function applyCommon(data){
   document.querySelectorAll("[data-i18n]").forEach(element=>{
-    const key=element.dataset.i18n;
-    if(translations[language][key]){
-      element.textContent=translations[language][key];
-    }
+    const value=getValue(data,element.dataset.i18n);
+    if(value!==null) element.innerHTML=value;
   });
-
-  document.getElementById("telegram-title").textContent=translations[language].telegram;
 }
 
-function createAchievement(item){
-  const card=document.createElement("article");
-  card.className="achievement";
+function renderAchievement(item){
+  const article=document.createElement("article");
+  article.className="achievement";
 
   const number=document.createElement("div");
   number.className="achievement-number";
   number.textContent=item.number;
 
   const content=document.createElement("div");
+  content.className="achievement-content";
 
   const title=document.createElement("h3");
   title.className="achievement-title";
@@ -432,70 +504,102 @@ function createAchievement(item){
   content.appendChild(title);
   content.appendChild(description);
 
-  card.appendChild(number);
-  card.appendChild(content);
+  article.appendChild(number);
+  article.appendChild(content);
 
-  return card;
+  return article;
 }
 
-function renderSections(data){
-  document.getElementById("article-label").textContent=data.label;
-  document.getElementById("article-title").textContent=data.title;
+function renderSection(section){
+  const wrapper=document.createElement("section");
+  wrapper.className="achievement-section";
 
-  const container=document.getElementById("achievement-sections");
-  container.innerHTML="";
-
-  data.sections.forEach(section=>{
-    const wrapper=document.createElement("section");
-    wrapper.className="section";
-
+  if(section.title){
     const heading=document.createElement("h2");
-    heading.className="section-heading";
-    heading.textContent=section.title;
+    heading.innerHTML=section.title;
+    wrapper.appendChild(heading);
+  }
 
+  if(section.items){
     const list=document.createElement("div");
     list.className="achievement-list";
 
     section.items.forEach(item=>{
-      list.appendChild(createAchievement(item));
+      list.appendChild(renderAchievement(item));
     });
 
-    wrapper.appendChild(heading);
     wrapper.appendChild(list);
-    container.appendChild(wrapper);
-  });
-}
-
-async function loadData(language){
-  try{
-    const response=await fetch(`lang/achievements/${language}.json`);
-    if(!response.ok){
-      throw new Error("Language file not found");
-    }
-    return await response.json();
-  }catch(error){
-    if(language!=="en"){
-      const response=await fetch("lang/achievements/en.json");
-      return await response.json();
-    }
-    throw error;
   }
+
+  return wrapper;
 }
 
 async function init(){
   const language=getLanguage();
-  applyCommon(language);
+
+  let common;
+  let article;
 
   try{
-    const data=await loadData(language);
-    renderSections(data);
-  }catch(error){
-    document.getElementById("article-title").textContent="All Magic Rampage Achievements";
+    common=await loadJson(`lang/common/${language}.json`);
+  }catch{
+    common=await loadJson(`lang/common/${DEFAULT_LANGUAGE}.json`);
   }
+
+  try{
+    article=await loadJson(`lang/achievements/${language}.json`);
+  }catch{
+    article=await loadJson(`lang/achievements/${DEFAULT_LANGUAGE}.json`);
+  }
+
+  applyCommon(common);
+
+  document.querySelectorAll("[data-i18n]").forEach(element=>{
+    const key=element.dataset.i18n;
+
+    if(key.startsWith("achievements.")){
+      const value=getValue(article,key);
+
+      if(value!==null){
+        element.innerHTML=value;
+      }
+    }
+
+    if(key.startsWith("telegram.")){
+      const value=getValue(common,key);
+
+      if(value!==null){
+        element.innerHTML=value;
+      }
+    }
+  });
+
+  document.title=getValue(article,"achievements.title")||"Magic Rampage";
+
+  const description=document.querySelector('meta[name="description"]');
+  const descriptionValue=getValue(article,"achievements.description");
+
+  if(description && descriptionValue){
+    description.content=descriptionValue;
+  }
+
+  const coverAlt=getValue(article,"achievements.cover_alt");
+
+  if(coverAlt){
+    document.getElementById("coverImage").alt=coverAlt;
+  }
+
+  const body=document.getElementById("article-body");
+
+  article.achievements.sections.forEach(section=>{
+    body.appendChild(renderSection(section));
+  });
+
+  document.documentElement.lang=language;
 }
 
 init();
 </script>
 
 </body>
-  </html>
+</html>
