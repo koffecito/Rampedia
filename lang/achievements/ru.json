@@ -1,4 +1,5 @@
 {
+  "achievements": {
   "label": "Достижения",
   "title": "Все достижения Magic Rampage",
   "sections": [
@@ -583,4 +584,5 @@
       ]
     }
   ]
+ }
 }
