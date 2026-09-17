@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "title": "Magic Rampage — Information Portal",
+    "description": "Information portal about Magic Rampage."
+  },
+  "hero": {
+    "kicker": "Information Portal",
+    "description": ""
+  },
+  "footer": {
+    "madeBy": "Made by",
+    "handle": "(@Koffecito)"
+  },
+  "articles": {
+    "history": {
+      "title": "The History of Magic Rampage",
+      "description": "Magic Rampage is a dynamic 2D platformer with RPG elements from the Brazilian independent studio Asantee Games. Pixel art, magic, weapons, dungeons, and numerous secrets have made the game recognizable among fans of classic platformers. But the story of Magic Rampage began long before its release...",
+      "alt": "The History of Magic Rampage"
+    },
+    "support": {
+      "title": "How and Where to Properly Contact Game Support",
+      "description": "If you encounter a problem in the game that you cannot solve yourself, you can contact support. To get help faster, it is important to write your request properly and provide the necessary information.",
+      "alt": "Magic Rampage Support"
+    },
+    "ban": {
+      "title": "Bans in Magic Rampage",
+      "description": "Sometimes a player may discover that some online features in Magic Rampage have stopped working. This may be related to an account ban.",
+      "alt": "Ban in Magic Rampage"
+    },
+    "achievements": {
+      "title": "Magic Rampage Achievements",
+      "description": "This section contains all game achievements and their descriptions. The list is divided by game mode: Rampage+, Normal Mode, as well as achievements that are currently unavailable and will appear in future updates.",
+      "alt": "Magic Rampage Achievements"
+    },
+    "apps": {
+      "title": "Apps for Magic Rampage",
+      "description": "There are third-party apps for Magic Rampage that help players experiment with equipment and better understand the game.",
+      "alt": "Apps for Magic Rampage"
+    },
+    "links": {
+      "title": "Links",
+      "description": "This section contains the main links that may be useful to Magic Rampage players: official game and developer pages, as well as links to the game's communities.",
+      "alt": "Magic Rampage Links"
+    }
+  }
+}
