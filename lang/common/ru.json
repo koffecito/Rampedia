@@ -5,7 +5,6 @@
   "telegram": {
     "title": "Наши сообщества в Telegram",
     "channel": "Канал",
-    "group": "Группа",
-    "forum": "Форум"
+    "group": "Группа"
   }
 }
