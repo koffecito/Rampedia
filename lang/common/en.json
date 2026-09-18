@@ -5,7 +5,6 @@
   "telegram": {
     "title": "Our Telegram Communities",
     "channel": "Channel",
-    "group": "Group",
-    "forum": "Forum"
+    "group": "Group"
   }
 }
