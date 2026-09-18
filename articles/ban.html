@@ -49,6 +49,95 @@ body{
   padding:25px 18px 60px;
 }
 
+.language-switcher{
+  position: absolute;
+  top:18px;
+  right:18px;
+  z-index:20;
+}
+
+.language-button{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  min-width:58px;
+  justify-content:center;
+  padding:5px 7px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  background:rgba(21,24,34,.92);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:11px;
+  font-weight:600;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  transition:border-color .2s ease,background .2s ease;
+}
+
+.language-button:hover{
+  border-color:var(--border-hover);
+  background:rgba(28,31,42,.96);
+}
+
+.language-flag{
+  font-size:13px;
+  line-height:1;
+}
+
+.language-chevron{
+  width:6px;
+  height:6px;
+  border-right:1px solid var(--text-dim);
+  border-bottom:1px solid var(--text-dim);
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .2s ease;
+}
+
+.language-switcher.open .language-chevron{
+  transform:rotate(225deg) translate(-1px,-1px);
+}
+
+.language-menu{
+  position:absolute;
+  top:calc(100% + 7px);
+  right:0;
+  display:none;
+  min-width:100%;
+  padding:5px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:rgba(21,24,34,.98);
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  backdrop-filter:blur(10px);
+}
+
+.language-switcher.open .language-menu{
+  display:block;
+}
+
+.language-option{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:7px 8px;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:12px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.language-option:hover,
+.language-option.active{
+  background:rgba(216,162,74,.1);
+  color:var(--accent);
+}
+
 .topbar{
   margin-bottom:22px;
 }
@@ -350,6 +439,16 @@ em{
 }
 
 @media(max-width:520px){
+  .language-switcher{
+    top:12px;
+    right:12px;
+  }
+
+  .language-button{
+    min-width:68px;
+    padding:7px 9px;
+  }
+
   .page{
     padding:20px 12px 45px;
   }
@@ -416,6 +515,19 @@ em{
 </head>
 
 <body>
+
+<div class="language-switcher" id="language-switcher">
+  <button class="language-button" id="language-button" type="button" aria-expanded="false" aria-haspopup="true">
+    <span class="language-flag" id="language-flag">🇬🇧</span>
+    <span id="language-code">EN</span>
+    <span class="language-chevron"></span>
+  </button>
+  <div class="language-menu" id="language-menu">
+    <button class="language-option" type="button" data-language="ru"><span>🇷🇺</span><span>RU</span></button>
+    <button class="language-option" type="button" data-language="en"><span>🇬🇧</span><span>EN</span></button>
+  </div>
+</div>
+
 
 <main class="page">
 
@@ -487,10 +599,48 @@ em{
 <script>
 const DEFAULT_LANGUAGE="en";
 
+
+const languageSwitcher=document.getElementById("language-switcher");
+const languageButton=document.getElementById("language-button");
+const languageFlag=document.getElementById("language-flag");
+const languageCode=document.getElementById("language-code");
+
 function getLanguage(){
-  const language=(navigator.language||"").toLowerCase();
-  return language.startsWith("ru")?"ru":"en";
+  const saved=localStorage.getItem("rampedia-language");
+  if(saved==="ru" || saved==="en") return saved;
+  const browserLanguage=(navigator.language||"").toLowerCase();
+  return browserLanguage.startsWith("ru")?"ru":"en";
 }
+
+function updateLanguageButton(){
+  const language=getLanguage();
+  languageFlag.textContent=language==="ru"?"🇷🇺":"🇬🇧";
+  languageCode.textContent=language.toUpperCase();
+  document.querySelectorAll(".language-option").forEach(option=>{
+    option.classList.toggle("active",option.dataset.language===language);
+  });
+}
+
+languageButton.addEventListener("click",event=>{
+  event.stopPropagation();
+  const open=languageSwitcher.classList.toggle("open");
+  languageButton.setAttribute("aria-expanded",open?"true":"false");
+});
+
+document.querySelectorAll(".language-option").forEach(option=>{
+  option.addEventListener("click",()=>{
+    localStorage.setItem("rampedia-language",option.dataset.language);
+    location.reload();
+  });
+});
+
+document.addEventListener("click",()=>{
+  languageSwitcher.classList.remove("open");
+  languageButton.setAttribute("aria-expanded","false");
+});
+
+updateLanguageButton();
+
 
 async function loadJson(path){
   const response=await fetch(path);
@@ -636,6 +786,7 @@ async function init(){
   }
 
   const body=document.getElementById("article-body");
+  body.replaceChildren();
 
   article.ban.sections.forEach(section=>{
     body.appendChild(renderSection(section));
