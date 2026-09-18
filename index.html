@@ -59,6 +59,95 @@
       padding: 65px 18px 60px;
     }
 
+    .language-switcher {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 20;
+    }
+
+    .language-button {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 72px;
+      justify-content: center;
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      background: rgba(21,24,34,0.92);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .language-button:hover {
+      border-color: var(--border-hover);
+      background: rgba(28,31,42,0.96);
+    }
+
+    .language-flag {
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .language-chevron {
+      width: 6px;
+      height: 6px;
+      border-right: 1px solid var(--text-dim);
+      border-bottom: 1px solid var(--text-dim);
+      transform: rotate(45deg) translateY(-2px);
+      transition: transform 0.2s ease;
+    }
+
+    .language-switcher.open .language-chevron {
+      transform: rotate(225deg) translate(-1px, -1px);
+    }
+
+    .language-menu {
+      position: absolute;
+      top: calc(100% + 7px);
+      right: 0;
+      display: none;
+      min-width: 100%;
+      padding: 5px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(21,24,34,0.98);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+      backdrop-filter: blur(10px);
+    }
+
+    .language-switcher.open .language-menu {
+      display: block;
+    }
+
+    .language-option {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 8px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 12px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .language-option:hover,
+    .language-option.active {
+      background: rgba(216,162,74,0.1);
+      color: var(--accent);
+    }
+
     .hero {
       text-align: center;
       margin-bottom: 30px;
@@ -243,6 +332,16 @@
     }
 
     @media (max-width: 520px) {
+      .language-switcher {
+        top: 12px;
+        right: 12px;
+      }
+
+      .language-button {
+        min-width: 68px;
+        padding: 7px 9px;
+      }
+
       .page {
         padding:
           45px
@@ -298,6 +397,17 @@
 </head>
 
 <body>
+  <div class="language-switcher" id="language-switcher">
+    <button class="language-button" id="language-button" type="button" aria-expanded="false" aria-haspopup="true">
+      <span class="language-flag" id="language-flag">🇷🇺</span>
+      <span id="language-code">RU</span>
+      <span class="language-chevron"></span>
+    </button>
+    <div class="language-menu" id="language-menu">
+      <button class="language-option" type="button" data-language="ru"><span>🇷🇺</span><span>RU</span></button>
+      <button class="language-option" type="button" data-language="en"><span>🇬🇧</span><span>EN</span></button>
+    </div>
+  </div>
   <main class="page">
     <header class="hero">
       <p class="hero-kicker" id="hero-kicker"></p>
@@ -321,7 +431,46 @@
   </main>
 
   <script>
-    const language = navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
+    let language = localStorage.getItem("rampedia-language");
+    if(language !== "ru" && language !== "en"){
+      language = navigator.language.toLowerCase().startsWith("ru") ? "ru" : "en";
+    }
+
+    const languageSwitcher = document.getElementById("language-switcher");
+    const languageButton = document.getElementById("language-button");
+    const languageFlag = document.getElementById("language-flag");
+    const languageCode = document.getElementById("language-code");
+
+    function updateLanguageButton(){
+      languageFlag.textContent = language === "ru" ? "🇷🇺" : "🇬🇧";
+      languageCode.textContent = language.toUpperCase();
+      document.querySelectorAll(".language-option").forEach(option => {
+        option.classList.toggle("active", option.dataset.language === language);
+      });
+    }
+
+    languageButton.addEventListener("click", event => {
+      event.stopPropagation();
+      const open = languageSwitcher.classList.toggle("open");
+      languageButton.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+
+    document.querySelectorAll(".language-option").forEach(option => {
+      option.addEventListener("click", () => {
+        language = option.dataset.language;
+        localStorage.setItem("rampedia-language", language);
+        languageSwitcher.classList.remove("open");
+        languageButton.setAttribute("aria-expanded", "false");
+        loadLanguage();
+      });
+    });
+
+    document.addEventListener("click", () => {
+      languageSwitcher.classList.remove("open");
+      languageButton.setAttribute("aria-expanded", "false");
+    });
+
+    updateLanguageButton();
 
     const articles = [
       {
@@ -369,6 +518,7 @@
 
       document.documentElement.lang = language;
       document.title = data.meta.title;
+      updateLanguageButton();
       document.querySelector('meta[name="description"]').setAttribute("content", data.meta.description);
 
       document.getElementById("hero-kicker").textContent = data.hero.kicker;
