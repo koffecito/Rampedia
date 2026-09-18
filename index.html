@@ -61,24 +61,24 @@
 
     .language-switcher {
       position: absolute;
-      top: 14px;
-      right: 14px;
+      top: 18px;
+      right: 18px;
       z-index: 20;
     }
 
     .language-button {
       display: flex;
       align-items: center;
-      gap: 7px;
-      min-width: 72px;
+      gap: 5px;
+      min-width: 58px;
       justify-content: center;
-      padding: 8px 11px;
+      padding: 5px 7px;
       border: 1px solid var(--border);
       border-radius: 11px;
       background: rgba(21,24,34,0.92);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
       cursor: pointer;
       backdrop-filter: blur(10px);
@@ -91,7 +91,7 @@
     }
 
     .language-flag {
-      font-size: 15px;
+      font-size: 13px;
       line-height: 1;
     }
 
@@ -527,6 +527,7 @@
       document.getElementById("author-handle").textContent = ` ${data.footer.handle}`;
 
       const list = document.getElementById("article-list");
+      list.replaceChildren();
 
       articles.forEach(article => {
         const text = data.articles[article.key];
