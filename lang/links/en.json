@@ -82,12 +82,6 @@
               "badge": "Group"
             },
             {
-              "title": "MRC Forum",
-              "href": "https://t.me/MRCForum",
-              "image": "images/links/mrc-forum.jpg",
-              "badge": "Forum"
-            },
-            {
               "separator": true
             },
             {
