@@ -18,7 +18,7 @@
         "paragraphs": [
           "One of the signs of a ban is being unable to enter the Tavern. When you try to enter, you are disconnected from the server, and a message appears at the top of the screen:"
         ],
-        "quote": "“Unusual activity has been detected on your account. Some online multiplayer features may not work as expected.”",
+        "quote": "“Irregular activity has been detected on your account. Some online multiplayer features may not work as expected.”",
         "image": "images/ban/tavern-en.jpg",
         "image_alt": "Tavern ban message"
       },
@@ -39,7 +39,7 @@
   "paragraphs": [
     "The following signs may also be noticeable in Competitive Mode:"
   ],
-  "quote": "“Suspicious activity has been detected on your account. Some Competitive Mode features will not work.”",
+  "quote": "“Irregular activity has been detected on your account. Some features in the Competitive mode may not work as expected.”",
   "image": "images/ban/competitive-en.jpg",
   "image_alt": "Competitive Mode ban"
 },
