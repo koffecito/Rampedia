@@ -4,15 +4,13 @@
     "title": "The History of Magic Rampage",
     "description": "The history of the creation and development of Magic Rampage.",
     "cover_alt": "The History of Magic Rampage",
-
     "sections": [
       {
         "paragraphs": [
-          "Magic Rampage is a dynamic 2D platformer with RPG elements from the Brazilian independent studio Asantee Games. Pixel art, magic, weapons, dungeons, and numerous secrets have made the game recognizable among fans of classic platformers.",
+          "Magic Rampage is a dynamic 2D platformer with RPG elements from the Brazilian independent studio Asantee Games. Magic, weapons, dungeons, and numerous secrets have made the game recognizable among fans of classic platformers.",
           "But the story of Magic Rampage began long before its release."
         ]
       },
-
       {
         "title": "The Beginning of Asantee Games",
         "paragraphs": [
@@ -22,7 +20,6 @@
         ],
         "fact": "The name Asantee Games is connected to the name of its founder — André Santee."
       },
-
       {
         "title": "The Steps Before Magic Rampage",
         "paragraphs": [
@@ -32,7 +29,6 @@
         ],
         "fact": "Magic Rampage is connected to other Asantee Games titles and takes place in the same game universe. Elements and characters from other studio projects can be found in it."
       },
-
       {
         "title": "The Idea Behind the Game",
         "paragraphs": [
@@ -52,17 +48,14 @@
         ],
         "after_list": "The result was a unique combination of a classic platformer and an RPG."
       },
-
       {
         "title": "Why Does the Game Look Like This?",
         "paragraphs": [
-          "One of the main features of Magic Rampage is its pixel art.",
           "The developers did not try to make the game as realistic as possible. Instead, they deliberately used a style reminiscent of old console games.",
           "At the same time, Magic Rampage is not simply a copy of games from the past. It features modern gameplay mechanics, a large amount of equipment, and an RPG character progression system.",
           "This combination of a retro visual style and modern mechanics became one of the project's main features."
         ]
       },
-
       {
         "title": "The Release of Magic Rampage",
         "paragraphs": [
@@ -73,7 +66,6 @@
         ],
         "fact": "Magic Rampage received the Editors' Choice award on Google Play."
       },
-
       {
         "title": "Continued Development",
         "paragraphs": [
@@ -83,7 +75,6 @@
         ],
         "fact": "Magic Rampage is a good example of a game that continued to develop after its initial success. The developers kept expanding it instead of simply releasing another game."
       },
-
       {
         "title": "From a Small Team to a Large Audience",
         "paragraphs": [
@@ -94,4 +85,4 @@
       }
     ]
   }
-      }
+}
