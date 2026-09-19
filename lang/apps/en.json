@@ -51,6 +51,12 @@
         }
       },
       {
+        "download": {
+          "text": "Get Inventory Rampager (iOS, PC)",
+          "url": "https://sdroimod.github.io/inventory-rampager/"
+        }
+      },
+      {
         "title": "Which application should you choose?"
       },
       {
@@ -69,4 +75,4 @@
       }
     ]
   }
-      }
+}
